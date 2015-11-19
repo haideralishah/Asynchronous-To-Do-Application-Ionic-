@@ -1,0 +1,88 @@
+/* Empty. Add your own CSS if you like */
+/*CSS for addTask.html page*/
+.buttonPadding{
+  padding: 15%;
+}
+.addPaddingtop{
+  padding-top: 15%;
+}
+/*CSS for addTask.html page*/
+
+/*CSS for home.html page*/
+.buttonInline{
+  display: inline;
+}
+.buttonFloat{
+  float:right
+}
+.buttonPaddingleftRight{
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+/*CSS for home.html page*/
+
+/*CSS for taskDetail.html page*/
+
+.paraCenter{
+  text-align: center;
+}
+.paraJustified{
+  text-align: justify;
+}
+
+.paraPaddingLeftRight{
+  padding-right: 5%;
+  padding-left: 5%;
+
+}
+
+/*CSS for taskDetail.html page*/
+
+/*CSS for oathPage.html page*/
+
+img.logo{
+  width: 45%;
+  height: 25%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 30%;
+
+}
+.addPaddingtopForImg{
+  padding-top: 20%;
+}
+.addPaddingBottomForImg{
+  padding-bottom: 10%;
+}
+.oathfooter{
+  position: relative;
+  bottom: 0;
+  color: rgb(71, 103, 150);
+  text-align: center;
+
+}
+.oathfooter a{
+  text-align: center;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+/*CSS for oathPage.html page*/
+
+.inlineDisplay{
+  display: inline !important;
+}
+
+.blockDisplay{
+
+  display: block !important;
+}
+
+.floatLeft{
+  float: left;
+}
+
+.buttonTopMargin{
+  margin-top: 3%;
+}

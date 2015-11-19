@@ -1,0 +1,47 @@
+<ion-view view-title="Add a task to do" hide-back-button="false">
+  <ion-content>
+    <div class="">
+    <div class="">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Task to do</span>
+        <input type="text" placeholder="Add task" ng-model="task.taskTitle">
+      </label>
+    </div>
+    <div class="">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Task description</span>
+        <input type="text" placeholder="Add description" ng-model="task.desc">
+      </label>
+    </div>
+    <div class="">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">dd-Month, YYYY</span>
+        <input type="text" placeholder="Date to perform" ng-model="task.datePerform">
+      </label>
+    </div>
+      <div class=" addPaddingtop">
+        <label class="item-input item-select">
+          <div class="input-label">
+            Status
+          </div>
+          <select ng-model="task.statusTask">
+            <option>Complete</option>
+            <option selected>Incomplete</option>
+            <option>Partial Complete</option>
+          </select>
+        </label>
+      </div>
+    <div class="">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Refrence</span>
+        <input type="text" placeholder="Add a refrence" ng-model="task.taskRefrence">
+      </label>
+    </div>
+    </div>
+    <div class="buttonPadding">
+    <button class="button button-block button-positive" ng-click="addItem(task)" ui-sref="home">
+      Add To Do
+    </button>
+    </div>
+  </ion-content>
+</ion-view>

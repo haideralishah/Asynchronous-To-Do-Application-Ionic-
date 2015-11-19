@@ -1,0 +1,38 @@
+<ion-view view-title="What to do..." hide-back-button="true">
+  <ion-content>
+    <div>
+      <a class="item item-thumbnail-bottom " href="#">
+          <img class="buttonFloat" ng-src="{{authData.facebook.profileImageURL}}" >
+        <div class="">
+          <h2 class="">{{authData.facebook.displayName}}</h2>
+          <!--<p class="">You have {{}} task to do</p>-->
+        </div>
+      <div class="buttonTopMargin">
+        <button class="button button-large button-positive" ui-sref="addTask">
+          Add Task
+        </button>
+      </div>
+      </a>
+
+    </div>
+    <div ui-sref="taskDetails({ partyID: task.$id })">
+      <h2>{{task.taskTitle}}</h2>
+      <p>Date: {{task.datePerform}}</p>
+    </div>
+    <div class="buttonFloat">
+      <button class="button button-small button-positive buttonPaddingleftRight" ui-sref="editTask({ partyID: task.$id })">
+        Edit
+      </button>
+      <button class="button button-small button-positive" ng-click="deleteTask(task.$id)">
+        Delete
+      </button>
+    </div>
+    </span>
+    </div>
+
+
+  </ion-content>
+</ion-view>
+
+<div class="addPaddingtop" ng-repeat="task in taskref">
+<span class="item item-thumbnail-center">
