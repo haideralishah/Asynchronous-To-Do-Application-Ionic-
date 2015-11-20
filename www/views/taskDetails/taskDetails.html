@@ -16,5 +16,10 @@
           <b>Status:</b> {{taskDetails.statusTask}}
       </p>
     </div>
+    <div class="buttonPadding">
+    <button class="button button-block button-positive" ui-sref="editTask({ partyID: taskDetails.$id })">
+      Edit Task
+    </button>
+    </div>
   </ion-content>
 </ion-view>

@@ -15,11 +15,20 @@
       </a>
 
     </div>
-    <div ui-sref="taskDetails({ partyID: task.$id })">
+
+
+      <div class="addPaddingtop" ng-repeat="task in taskref">
+        <span class="item item-thumbnail-center">
+
+
+
+
+
+        <div ui-sref="taskDetails({ partyID: task.$id })">
       <h2>{{task.taskTitle}}</h2>
       <p>Date: {{task.datePerform}}</p>
     </div>
-    <div class="buttonFloat">
+         <div class="buttonFloat">
       <button class="button button-small button-positive buttonPaddingleftRight" ui-sref="editTask({ partyID: task.$id })">
         Edit
       </button>
@@ -27,12 +36,9 @@
         Delete
       </button>
     </div>
-    </span>
+     </span>
     </div>
 
 
   </ion-content>
 </ion-view>
-
-<div class="addPaddingtop" ng-repeat="task in taskref">
-<span class="item item-thumbnail-center">

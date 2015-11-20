@@ -3,16 +3,17 @@
  */
 
 angular.module('ionicToDo')
-  .controller("oathPageController", function($scope, $location, Auth, $rootScope){
+  .controller("oathPageController", function($scope, $state, Auth, $rootScope){
     $scope.login = function() {
-      Auth.$authWithOAuthRedirect("facebook")
+      //Auth.$authWithOAuthRedirect("facebook")
+      Auth.$authWithOAuthPopup("facebook")
       .then(function(authData) {
         // User successfully logged in
-
       })
         .catch(function(error) {
         if (error.code === "TRANSPORT_UNAVAILABLE") {
-          Auth.$authWithOAuthPopup("facebook")
+          //Auth.$authWithOAuthPopup("facebook")
+          Auth.$authWithOAuthRedirect("facebook")
             .then(function(authData) {
             // User successfully logged in. We can log to the console
             // since we’re using a popup here
@@ -30,7 +31,7 @@ angular.module('ionicToDo')
       } else {
         console.log("Logged in as", authData.uid);
         console.log(authData);
-        $location.path('/home');
+        $state.go('home');
         $rootScope.hideLogoutButton = false;
       }
       $rootScope.authData = authData; // This will display the user's name in our view

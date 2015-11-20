@@ -19,15 +19,41 @@ angular.module('ionicToDo', ["ionic", "firebase"])
     return itemsRef;
   })*/
 
-  .controller("indexController", function($scope, $rootScope, Auth, $location){
+  .controller("indexController", function($scope, $rootScope, Auth, $state, $ionicPopover){
     $rootScope.hideLogoutButton = true;
     $rootScope.unAuth = function() {
       Auth.$unauth();
       $rootScope.hideLogoutButton = true;
-      $rootScope.authData = null;
-      $location.path('/oathPage');
+
+      $rootScope.authData = "";
+      Auth.authData = "";
+
+      if ($rootScope.authData === "" && Auth.authData === "") {
+
+
+        $state.go('oathPage');
+
+      }
+
 
     }
+
+    /*popover*/
+    $ionicPopover.fromTemplateUrl('views/popover/credit.html', {
+      scope: $scope
+    })
+      .then(function (popover) {
+        $scope.popover = popover;
+      });
+    $scope.openHelp = function($event) {
+      $scope.popover.show($event);
+    };
+    $scope.$on('$destroy', function() {
+      $scope.popover.remove();
+    });
+
+
+    /*popover*/
 
   })
 
@@ -63,7 +89,7 @@ angular.module('ionicToDo', ["ionic", "firebase"])
       })
     ;
     $urlRouterProvider
-      .otherwise('/home');})
+      .otherwise('/oathPage');})
 
 
 
